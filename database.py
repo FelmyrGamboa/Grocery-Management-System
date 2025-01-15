@@ -25,3 +25,5 @@ class Customer:
     #                         total_price DECIMAL (10,2) NOT NULL,
     #                         date_time DATETIME
     #                         )""")
+
+    customer_cursor.execute("""ALTER TABLE""")
