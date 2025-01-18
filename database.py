@@ -19,7 +19,11 @@ class Customer:
                             fullname VARCHAR(200) NOT NULL, 
                             username VARCHAR(200) NOT NULL UNIQUE,
                             password VARCHAR(200) NOT NULL
+<<<<<<< Updated upstream
                              )""")
+=======
+                            )""")
+>>>>>>> Stashed changes
         
     def create_table_shopping_history(self):
         self.customer_cursor.execute("""CREATE TABLE customer_shopping_history (
@@ -28,7 +32,11 @@ class Customer:
                             quantity INT UNSIGNED NOT NULL, 
                             total_price DECIMAL (10,2) NOT NULL,
                             date_time DATETIME
+<<<<<<< Updated upstream
                              )""")
+=======
+                            )""")
+>>>>>>> Stashed changes
         
 db_table = Customer()
 # db_table.create_database()
