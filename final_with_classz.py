@@ -48,12 +48,12 @@ class Cart:
             if not user_cart:
                 return print("Your cart is empty")
             
-            total_price = sum((item.quantity * item.price) * item.kilo for item in user_cart)
+            total_price = sum(item.quantity * item.price for item in user_cart)
 
                         # Display cart items
             print("Items in your cart:")
             for idx, item in enumerate(user_cart, start=1):
-                print(f"{idx}. {item.product} ({item.quantity}x) - {item.kilo} kg x {item.price} PHP")
+                print(f"{idx}. {item.product} ({item.quantity}x) - {item.price} PHP")
             print(f"Total Price: {total_price} PHP")
 
             # Provide options
@@ -79,12 +79,12 @@ class Cart:
                 print("Invalid choice. Please try again.")
 
 
-    def __init__(self, product, price, quantity, kilo, user):
+    def __init__(self, product, price, quantity, user):
         self.product = str(product)
         self.price = float(price)
         self.quantity = int(quantity)
         self.user = user
-        self.kilo= int(kilo)
+
         Cart.cart_items.append(self)
 
     #added done (pacheck)
@@ -95,7 +95,7 @@ class Cart:
 
         user_cart = [item for item in Cart.cart_items if item.user == user]
         for item in user_cart:
-            print(f"{item.product} - {item.quantity}x - {item.kilo} kg - {item.price} PHP each")
+            print(f"{item.product} - {item.quantity}x - {item.price} PHP each")
         print(f"Total Price: {total_price} PHP")
         print("Thank you for shopping with us!")
         cls.cart_items = [item for item in cls.cart_items if item not in user_cart]  # Clear purchased items
@@ -106,13 +106,11 @@ class ShoppingHistory:
     records = []
     customer_db = Customer()
 
-    #added kilo
-    def __init__(self, product, price, quantity, kilo):
+    def __init__(self, product, price, quantity):
         self.product = str(product)
         self.price = float(price)
         self.quantity = int(quantity)
-        self.total_price = float((self.price *self.kilo) * self.quantity) #changed and added format
-        self.kilo = int(kilo) #added
+        self.total_price = float(self.price * self.quantity) #abck sa old format
 
 
 # new file
@@ -206,8 +204,7 @@ class GroceryItems:
 
                 try:
                     quantity= int(input("Enter quantity: "))
-                    kilo= int(input("Enter kilo: ")) #added
-                    chosen_product = Cart(selected_product[0], selected_product[1], quantity,kilo, logged_user)
+                    chosen_product = Cart(selected_product[0], selected_product[1], quantity, logged_user)
 
                     
 
@@ -216,7 +213,7 @@ class GroceryItems:
                     action_choice = input("Enter your choice: ")
                     if action_choice == "1":
                         user_cart=[item for item in Cart.cart_items if item.user == logged_user]
-                        total_price = sum((item.quantity * item.price) * item.kilo for item in user_cart)
+                        total_price = sum((item.quantity * item.price) for item in user_cart)
                         chosen_product.checkout(self,total_price)
                         return
                     elif action_choice == "2":
