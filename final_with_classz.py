@@ -71,7 +71,11 @@ class Cart:
                 else:
                     print("Invalid item number.")
             elif choice == "2":
-                cls.checkout(user_cart, total_price)
+                #added
+                cls.checkout(cls, user_cart, total_price)
+                user_cart=[item for item in Cart.cart_items if item.user == user]
+                total_price = sum((item.quantity * item.price) for item in user_cart)
+                Cart.cart_items = [item for item in Cart.cart_items if item.user != user]
                 return
             elif choice == "3":
                 break
@@ -87,19 +91,14 @@ class Cart:
 
         Cart.cart_items.append(self)
 
-    #added done (pacheck)
-    @classmethod
-    def checkout(cls, user, total_price):
+    #rearrange 
+    def checkout(self,  user, total_price):
         print("\n=== Checkout ===")
         print("Items being purchased:")
 
-        user_cart = [item for item in Cart.cart_items if item.user == user]
-        for item in user_cart:
-            print(f"{item.product} - {item.quantity}x - {item.price} PHP each")
+
         print(f"Total Price: {total_price} PHP")
         print("Thank you for shopping with us!")
-        cls.cart_items = [item for item in cls.cart_items if item not in user_cart]  # Clear purchased items
-
 
 # new file not sure pa
 class ShoppingHistory:
@@ -212,10 +211,15 @@ class GroceryItems:
                     print("2. Add to cart")
                     action_choice = input("Enter your choice: ")
                     if action_choice == "1":
-                        user_cart=[item for item in Cart.cart_items if item.user == logged_user]
-                        total_price = sum((item.quantity * item.price) for item in user_cart)
+                        
+                        #chinange ang format 
+                        total_price = chosen_product.quantity * chosen_product.price
+
+                        Cart.cart_items.remove(chosen_product)
+                        print(f"{chosen_product.product} has been removed from your cart after purchase.")  
+                        
                         chosen_product.checkout(self,total_price)
-                        return
+
                     elif action_choice == "2":
                         print(f"{selected_product[0]} added to cart.")
                 except ValueError:
