@@ -10,7 +10,7 @@ Shopeelengke is a virtual marketplace that blends the convenience of e-commerce 
   <img src="images/first_page.png" /> 
 </div>
 
-# Purpose
+### Purpose
 The project’s primary purpose is to address two main objectives:
 <ul>
   <li>
@@ -22,5 +22,34 @@ vegetables.
     To serve as a practical demonstration of the role of data structures and
 algorithms in real-world applications, emphasizing their importance in
 system efficiency and problem-solving.
+  </li>
+</ul>
+
+### Features
+Shopeelengke incorporates several features designed to enhance user experience
+and streamline shopping activities. These features include:
+
+<ul>
+  <li>
+    Aesthetic user interface: A visually appealing and user-friendly design that
+ensures smooth navigation.
+  </li>
+  <img src="images/welcome_page.png" />
+  <li>Login and registration system: Secure account management for
+customers.
+  </li>
+  <img src="" />
+  <li>
+    Shopping options: Organized sections for vegetables and fruits, allowing
+users to browse products efficiently.
+  </li>
+  <img src="" />
+  <li>
+    Shopping cart management: A dynamic system where users can add,
+update, or remove items during their shopping session.
+  </li>
+  <li>
+    Shopping history: A detailed log of previous transactions, enabling users to
+view their past purchases.
   </li>
 </ul>
