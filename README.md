@@ -25,6 +25,8 @@ system efficiency and problem-solving.
   </li>
 </ul>
 
+
+
 ### Features
 Shopeelengke incorporates several features designed to enhance user experience
 and streamline shopping activities. These features include:
@@ -51,5 +53,22 @@ update, or remove items during their shopping session.
   <li>
     Shopping history: A detailed log of previous transactions, enabling users to
 view their past purchases.
+  </li>
+</ul>
+
+<strong>In addition to these, Shopeelengke integrates essential backend functionalities
+powered by SQL databases and DSA techniques, such as: </strong>
+<ul>
+  <li>Customer database: Stores user credentials, such as username and
+password, using a linked-list structure.
+  </li>
+  <li>
+    Shopping history database: Utilizes stacks to record order history, including
+product names, prices, quantities, and transaction timestamps.
+  </li>
+  <li>
+    Sorting and searching: Implements sorting techniques to organize products
+by price or name, and searching algorithms to help users quickly locate
+specific items.
   </li>
 </ul>
