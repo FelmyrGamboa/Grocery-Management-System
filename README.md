@@ -72,3 +72,22 @@ by price or name, and searching algorithms to help users quickly locate
 specific items.
   </li>
 </ul>
+
+### Limitations
+
+<ul>
+  <li>
+    <b>Limited product range:</b> The platform is restricted to selling only 10 fruits
+and 10 vegetables, excluding other grocery items.
+  </li>
+  <li>
+    <b>No payment integration:</b> Shopeelengke lacks a payment method, requiring
+users to manage transactions externally.
+  </li>
+  <li>
+    <b>Scalability constraints:</b> The current implementation is optimized for a
+limited number of products and users, which may require enhancements for
+larger-scale operations.
+  </li>
+</ul>
+
